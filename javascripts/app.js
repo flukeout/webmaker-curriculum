@@ -1,12 +1,15 @@
 var navOffset, navTop;
 
 $(document).ready(function(){
+
+  if (window.location.hash){
+    var location = window.location.hash;
+    navigate(location.replace("#",""));
+  }
+
   $(".activity-nav").on("click","a",function(){
-    $(".activity-nav a").removeClass("selected");
-    $(this).addClass("selected");
     var section = $(this).attr("href").replace("#","");
     navigate(section);
-    return false;
   });
 
   $(window).on("scroll",function(){
@@ -20,6 +23,10 @@ $(document).ready(function(){
 });
 
 function navigate(section){
+
+  $(".activity-nav a").removeClass("selected");
+  $(".activity-nav a[href=#"+section+"]").addClass("selected");
+
 
   $(".agenda > ul > li").hide();
   $("#overview").hide();
