@@ -48,8 +48,13 @@ p,li {
   color: rgba(0,0,0,.65);
 }
 
+b {
+  font-weight: normal;
+  color: rgba(0,0,0,1);
+}
+
 p,ul {
-  margin: 10px 0 25px 0;
+  margin: 15px 0 25px 0;
 }
 
 a {
@@ -141,6 +146,7 @@ hgroup{
   padding: 0;
   margin: 15px 0 80px 0;
   list-style-type: none;
+  position: relative;
 }
 
 .activity-nav li:first-child {
@@ -150,7 +156,6 @@ hgroup{
 .activity-nav a {
   display: block;
   padding: 18px;
-
   font-size: 16px;
   text-decoration: none;
   color: white;
@@ -159,6 +164,10 @@ hgroup{
 .activity-nav a.selected {
   background: #d12d51;
   font-weight: bold;
+}
+
+.activity-nav a.selected:after {
+
 }
 
 .activity-nav a:hover {

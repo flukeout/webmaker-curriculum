@@ -1,3 +1,5 @@
+var navOffset, navTop;
+
 $(document).ready(function(){
   $(".activity-nav").on("click","a",function(){
     $(".activity-nav a").removeClass("selected");
@@ -6,6 +8,15 @@ $(document).ready(function(){
     navigate(section);
     return false;
   });
+
+  $(window).on("scroll",function(){
+    scroll();
+  })
+
+  navOffset = $(".activity-nav").offset();
+  navTop = navOffset.top;
+
+
 });
 
 function navigate(section){
@@ -21,4 +32,16 @@ function navigate(section){
     $(".wrapper").attr("mode","step");
   }
 
+}
+
+function scroll(){
+  var scrolled = $(window).scrollTop();
+  var delta = scrolled - navTop;
+  if(delta > 0){
+    $(".activity-nav").addClass("fixed");
+    $(".activity-nav").css("top",delta + "px");
+  } else {
+    $(".activity-nav").removeClass("fixed");
+    $(".activity-nav").css("top",0);
+  }
 }
