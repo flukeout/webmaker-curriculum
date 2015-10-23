@@ -149,9 +149,24 @@ hgroup{
   position: relative;
 }
 
+.activity-nav li {
+  position: relative;
+}
+
+
 .activity-nav li:first-child {
   margin-bottom: 15px;
 }
+
+/*.activity-nav li:first-child:after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  left: 20px;
+  bottom: -10px;
+  opacity: .4;
+}
+*/
 
 .activity-nav a {
   display: block;
