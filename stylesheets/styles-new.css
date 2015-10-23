@@ -59,6 +59,7 @@ p,ul {
 
 a {
   color: #3897c1;
+  transition: background .1s ease-out;
 }
 
 a:hover {
