@@ -205,10 +205,15 @@ hgroup{
 	float:left;
 }
 
+ul {
+  list-style-position: outside;
+  padding-left: 25px;
+}
 
 .agenda > ul {
   margin: 0;
   padding: 0;
+
 }
 
 .goals{
@@ -219,10 +224,18 @@ hgroup{
   margin-bottom:10%;;
 }
 
-.goals ul, .agenda ul{
+.agenda ul {
+  padding-left: 25px;
+}
+
+
+.agenda > ul  {
   padding-left:0;
 
 }
+
+
+
 
 .agenda > ul > li {
   display: none;
@@ -240,9 +253,6 @@ hgroup{
   list-style-type: none;
 
 }
-
-.agenda ul li ul{
-  padding-left:10px;}
 
 .time {
   width:60px;
@@ -439,12 +449,18 @@ body {
 
 figure {
   padding: 0;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 50px 0;
+}
+
+figure img {
+  display: block;
 }
 
 figcaption {
   background: #efefef;
-  padding: 3px 8px;
+  padding: 4px 8px;
+  margin-top: 8px;
+
 }
 
 .discussion-link {

@@ -10,6 +10,7 @@ $(document).ready(function(){
   $(".activity-nav").on("click","a",function(){
     var section = $(this).attr("href").replace("#","");
     navigate(section);
+    return false;
   });
 
   $(window).on("scroll",function(){
@@ -27,17 +28,20 @@ function navigate(section){
   $(".activity-nav a").removeClass("selected");
   $(".activity-nav a[href=#"+section+"]").addClass("selected");
 
-
   $(".agenda > ul > li").hide();
-  $("#overview").hide();
+  $("[section=overview]").hide();
+
+  console.log(section);
 
   if(section == "overview") {
-    $("#overview").show();
+    $("[section=overview]").show();
     $(".wrapper").attr("mode","overview");
   } else {
-    $(".agenda > ul > li#" + section).show();
+    $("[section=" + section+ "]").show();
     $(".wrapper").attr("mode","step");
   }
+
+  window.location.hash = section;
 
 }
 
