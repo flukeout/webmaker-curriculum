@@ -287,12 +287,12 @@ hr {
 }
 
 figcaption{
-	font-size:.8em;
-	font-weight: 300;
-	font-style: italic;
-	color: #4d4e53;
-	padding-bottom:2%;
-	float:right;
+  font-weight: 300;
+  font-style: italic;
+  color: #4d4e53;
+  padding-bottom:2%;
+  float:right;
+  font-size: 14px;
 }
 
 .img-thumbnail {
@@ -314,6 +314,7 @@ figcaption{
 .literacy-color-composing{
   background-color: #01bc85;
 }
+
 .literacy-color-practices{
   background-color: #0097d6;
 }
@@ -352,18 +353,20 @@ figcaption{
   background-color: #506b7b;
   color: white;
 }
+
 .literacy-color-privacy{
   background-color: #00bad6;
   color: white;
 }
+
 .literacy-color-security{
   background-color: #ff004e;
   color: white;
 }
+
 .literacy-color-designing{
   color: white;
 }
-
 
 .socialBtns {
   float:right;
@@ -400,8 +403,8 @@ body {
   text-align:center;
   color:white;
   position: absolute;
-  top: -12px;
-  right: 9px;
+  top: -8px;
+  right: 40px;
   padding: 8px 12px;
   margin: 0;
 }
@@ -418,7 +421,6 @@ body {
 .btn:hover {
   opacity: .8;
 }
-
 
 .small{
   font-style: italic;
@@ -446,7 +448,6 @@ figcaption {
   background: #efefef;
   padding: 4px 8px;
   margin-top: 8px;
-
 }
 
 .discussion-link {
