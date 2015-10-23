@@ -153,27 +153,13 @@ hgroup{
   position: relative;
 }
 
-
-.activity-nav li:first-child {
-  margin-bottom: 15px;
-}
-
-/*.activity-nav li:first-child:after {
-  content: "";
-  position: absolute;
-  width: 80%;
-  left: 20px;
-  bottom: -10px;
-  opacity: .4;
-}
-*/
-
 .activity-nav a {
   display: block;
   padding: 18px;
   font-size: 16px;
   text-decoration: none;
   color: white;
+  transition: background .1s ease-out;
 }
 
 .activity-nav a.selected {

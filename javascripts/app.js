@@ -20,7 +20,6 @@ $(document).ready(function(){
   navOffset = $(".activity-nav").offset();
   navTop = navOffset.top;
 
-
 });
 
 function navigate(section){
