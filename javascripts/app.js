@@ -1,13 +1,17 @@
-var navOffset, navTop;
+var navOffset, navTop, navEl;
 
 $(document).ready(function(){
+
+  navEl = $(".agenda-navigation");
+  navOffset = navEl.offset();
+  navTop = navOffset.top;
 
   if (window.location.hash){
     var location = window.location.hash;
     navigate(location.replace("#",""));
   }
 
-  $(".activity-nav").on("click","a",function(){
+  navEl.on("click","a",function(){
     var section = $(this).attr("href").replace("#","");
     navigate(section);
     return false;
@@ -17,20 +21,19 @@ $(document).ready(function(){
     scroll();
   })
 
-  navOffset = $(".activity-nav").offset();
-  navTop = navOffset.top;
-
 });
 
 function navigate(section){
 
-  $(".activity-nav a").removeClass("selected");
-  $(".activity-nav a[href=#"+section+"]").addClass("selected");
+  navEl.find("a").removeClass("selected");
+  navEl.find("a[href=#"+section+"]").addClass("selected");
 
-  $(".agenda > ul > li").hide();
+  $(".agenda > li").hide();
   $("[section=overview]").hide();
 
-  console.log(section);
+  if ($("[section=" + section + "]").length < 1){
+    section = "overview";
+  }
 
   if(section == "overview") {
     $("[section=overview]").show();
@@ -45,13 +48,13 @@ function navigate(section){
 }
 
 function scroll(){
+
   var scrolled = $(window).scrollTop();
   var delta = scrolled - navTop;
+
   if(delta > 0){
-    $(".activity-nav").addClass("fixed");
-    $(".activity-nav").css("top",delta + "px");
+    $(".agenda-navigation").css("top",delta + "px");
   } else {
-    $(".activity-nav").removeClass("fixed");
-    $(".activity-nav").css("top",0);
+    $(".agenda-navigation").css("top",0);
   }
 }
