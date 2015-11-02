@@ -2,6 +2,7 @@ var navOffset, navTop, navEl;
 
 $(document).ready(function(){
 
+
   navEl = $(".agenda-navigation");
   navOffset = navEl.offset();
   navTop = navOffset.top;
@@ -18,7 +19,11 @@ $(document).ready(function(){
   });
 
   $(window).on("scroll",function(){
-    scroll();
+
+    if($(".wrapper").width() > 600){
+      scroll();
+    }
+
   })
 
 });
