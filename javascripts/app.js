@@ -30,8 +30,8 @@ $(document).ready(function(){
 
 function navigate(section){
 
-  navEl.find("a").removeClass("selected");
-  navEl.find("a[href=#"+section+"]").addClass("selected");
+  navEl.find(".selected").removeClass("selected");
+  navEl.find("a[href=#"+section+"]").parent().addClass("selected");
 
   $(".agenda > li").hide();
   $("[section=overview]").hide();
