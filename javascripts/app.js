@@ -2,54 +2,59 @@ var navOffset, navTop, navEl;
 
 $(document).ready(function(){
 
-
   navEl = $(".agenda-navigation");
   navOffset = navEl.offset();
   navTop = navOffset.top;
 
-  if (window.location.hash){
-    var location = window.location.hash;
-    navigate(location.replace("#",""));
-  }
+  navigate(window.location.hash);
 
   navEl.on("click","a",function(){
-    var section = $(this).attr("href").replace("#","");
-    navigate(section);
+    var step = $(this).attr("href");
+    navigate(step);
     return false;
   });
 
   $(window).on("scroll",function(){
-
     if($(".wrapper").width() > 600){
       scroll();
     }
-
-  })
+  });
 
 });
 
-function navigate(section){
-
-  navEl.find(".selected").removeClass("selected");
-  navEl.find("a[href=#"+section+"]").parent().addClass("selected");
+function navigate(hash){
+  // First we'll hide the steps and overview
+  // Then we'll show the correct ones
 
   $(".agenda > li").hide();
-  $("[section=overview]").hide();
+  $("section.overview").hide();
 
-  if ($("[section=" + section + "]").length < 1){
-    section = "overview";
+  hash = hash.toLowerCase();
+  var numberOfSteps = $(".agenda > li").length;
+
+  //By default, we'll show the overview
+  var overview = true;
+
+  if(hash.indexOf("step") > 0) {
+    var step = hash.replace("#step-","");
+    if(step <= numberOfSteps){
+      overview = false;
+    }
   }
 
-  if(section == "overview") {
-    $("[section=overview]").show();
+  if(overview) {
+    hash = "#overview";
+    $("section.overview").show();
     $(".wrapper").attr("mode","overview");
   } else {
-    $("[section=" + section+ "]").show();
+    $(".agenda > li:nth-child("+step+")").show();
     $(".wrapper").attr("mode","step");
   }
 
-  window.location.hash = section;
+  navEl.find(".selected").removeClass("selected");
+  navEl.find("a[href="+hash+"]").parent().addClass("selected");
 
+  window.location.hash = hash;
 }
 
 function scroll(){

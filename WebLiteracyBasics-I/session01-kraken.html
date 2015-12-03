@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../stylesheets/styles-new.css" media="screen">
-
     <title>Web Literacy Basics | Section 1: Reading the Web: Kraken the Code</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../stylesheets/styles-new.css" media="screen">
     <script src="../javascripts/jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="../javascripts/app.js" type="text/javascript" charset="utf-8"></script>
   </head>
@@ -16,55 +14,50 @@
 
     <div class="wrapper" mode="overview">
 
-      <aside class="aside">
-
+      <aside>
         <div class="image">
           <img src="../images/square-kraken.png">
-        <!-- <a href="http://mouse.org" class="attribution"><i class="fa fa-camera"></i> Mouse</a> -->
+          <a class="attribution" href="http://mouse.org">
+            <i class="fa fa-camera"></i> by Mouse
+          </a>
         </div>
 
-
+        <!-- Make sure each <li> has a corrext href="#step-X" attribute! -->
         <ul class="agenda-navigation">
-          <li><a class="selected" href="#overview">Overview</a></li>
-          <li><a href="#introduction">Introduction</a></li>
-          <li><a href="#hunt">Hunt</a></li>
-          <li><a href="#decode">Decode</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#step-1">Introduction</a></li>
+          <li><a href="#step-2">Hunt</a></li>
+          <li><a href="#step-3">Decode</a></li>
         </ul>
-
       </aside>
 
       <article class="main">
 
         <h1 class="activity-title">Kraken the Code</h1>
 
-        <section section="overview">
+        <section class="overview">
 
           <p class="made-by">
             Made by <a href="http://mouse.org/">MOUSE</a> and remixed for Clubs by <a href="https://webmaker.org/mentor">Mozilla</a>.
           </p>
 
-          <p class="leadTime">
+          <p class="time total-time">
             45 to 60 minutes
           </p>
 
-          <p class="lead">
+          <p class="summary">
             Learners will use the Internet to solve the mystery of The Kraken, a legendary sea creature, while also
             learning about <b>search terms, keywords</b>, and how to <b>assess the validity and relevance of web sources.</b>
           </p>
 
           <h4>Web Literacy Competencies</h4>
 
-          <a class="btn literacy-color-credibility" href="https://webmaker.org/en-US/resources/literacy/weblit-Credibility">
-            Credibility
-          </a>
-
-          <a class="btn literacy-color-search" href="https://webmaker.org/en-US/resources/literacy/weblit-Search">
-            Search
-          </a>
+          <a class="btn literacy-color-credibility" href="https://webmaker.org/en-US/resources/literacy/weblit-Credibility">Credibility</a>
+          <a class="btn literacy-color-search" href="https://webmaker.org/en-US/resources/literacy/weblit-Search">Search</a>
 
           <h4>Learning Objectives</h4>
 
-          <ul class="objectives">
+          <ul>
             <li>Locate relevant information by using search engines</li>
             <li>Compare and contrast information found using multiple searches</li>
             <li>Compare information from a number of sources to judge their trustworthiness</li>
@@ -94,17 +87,17 @@
             in our <a href="http://discourse.webmaker.org/t/testing-1-reading-for-the-web/1149/22">Discussion Forum</a>.
           </p>
 
-        </section>
+        </section> <!-- End of Introduction -->
 
         <ul class="agenda">
 
-          <li section="introduction">
-
+          <li>
             <h1>1. Introduction</h1>
+            <div class="time step-time">10 min</div>
 
-            <div class="time">10 min</div>
-
-            <p>Have a <b>brief conversation with your learners about web sources.</b></p>
+            <p>
+              Have a <b>brief conversation with your learners about web sources.</b>
+            </p>
 
             <div class="well example">
               <ul>
@@ -115,17 +108,14 @@
             </div>
 
             <p>
-              <b>Then review the <a href="legit-o-meter.html">Legit-o-Meter Tip Sheet</a></b> to discuss some
+              Then review the <a href="legit-o-meter.html">Legit-o-Meter Tip Sheet</a> to discuss some
               general rules for determining the credibility of a website.
             </p>
-
           </li>
 
-          <li section="hunt">
-
+          <li>
             <h1>2. Hunt</h1>
-
-            <div class="time">25 min</div>
+            <div class="time step-time">25 min</div>
 
             <p>
               Split learners into <b>groups of 2 or 3</b> and explain that each group’s challenge
@@ -160,14 +150,11 @@
               <a href="https://juanandresrosero.makes.org/thimble/LTEwMTA0MzM3OTI=/kraken-the-code-legit-o-meter" title="Finished Kraken worksheet"><img src="../images/kraken-finished-example.jpg" alt="Finished Kraken worksheet" class="img-example"></a>
               <figcaption>A finished Kraken worksheet by a <a href="http://mousesquad.org/">Mouse</a> learner</figcaption>
             </figure>
-
           </li>
 
-          <li section="decode">
-
+          <li>
             <h1>3. Defense</h1>
-
-            <div class="time">10 min</div>
+            <div class="time step-time">10 min</div>
 
             <p>
               At the end of the research period, <b>groups will stand under one of the
@@ -189,12 +176,9 @@
             </p>
 
           </li>
-
         </ul>
-
       </article>
 
     </div>
-
   </body>
 </html>

@@ -5,25 +5,20 @@ body {
   margin: 0;
 }
 
+
+body * {
+  line-height: initial;
+}
+
+p, li, span {
+  color: rgba(0,0,0,.7);
+}
+
 .wrapper {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  max-width: 1200px;
-  align-content: stretch;
   min-height: 100vh;
-}
-
-.main {
-  flex: 2;
-}
-
-.aside {
-  background: white;
-  flex: 1;
-  background: #D64262;
-  align-self: auto;
-  max-width: 300px;
 }
 
 article {
@@ -31,15 +26,29 @@ article {
   margin: 0 auto;
 }
 
-
 h1 {
   font-size: 40px;
   margin: 0;
   padding: 0;
   font-weight: normal;
   color: black;
-  position: relative;
   left: -3px;
+  position: relative;
+}
+
+hr {
+  color: #FF4E1F;
+  background: #FF4E1F;
+  width: 75%;
+  height: 5px;
+}
+
+[mode=step] .activity-title {
+  font-size: 18px;
+  opacity: .6;
+  margin: 0;
+  font-weight: normal;
+  left: 0;
 }
 
 .made-by {
@@ -47,7 +56,7 @@ h1 {
   color: rgba(0,0,0,.5);
 }
 
-.lead {
+.summary {
   background: #efefef;
   margin: 22px 0 45px 0;
   font-size: 18px;
@@ -55,47 +64,33 @@ h1 {
   padding: 15px 20px;
 }
 
-.objectives {
+.main ul {
   color: rgba(0,0,0,.5);
-  line-height: 150%;
   margin-top: 0;
+  padding-left: 25px;
+}
+
+.main ul li {
+  line-height: 135%;
+  margin-bottom: 10px;
 }
 
 h4 {
-  color: black;
-  opacity: .65;
+  color: rgba(0,0,0,.65);
   margin: 50px 0 10px 0;
   font-size: 16px;
   text-transform: uppercase;
-
 }
 
 
-[mode=step] .activity-title {
-  font-size: 18px;
-  opacity: .6;
-  margin: 0;
-  font-weight: normal;
-}
-
-
-p, li {
-  color: rgba(0,0,0,.65);
-}
-
-b {
+b, strong {
   font-weight: normal;
   color: rgba(0,0,0,1);
 }
 
-ul {
-  margin: 10px 0 42px 0;
+ul, p {
+  margin: 0 0 30px 0;
 }
-
-p {
-  margin: 10px 0 30px 0;
-}
-
 
 a {
   color: #3897c1;
@@ -109,11 +104,11 @@ a:hover {
 
 
 .main {
-  text-align: left;
-  background: white;
   position: relative;
   padding: 30px 40px;
 }
+
+/* These are the steps fo the Activity */
 
 .agenda h1 {
   border-bottom: solid 2px #DDD;
@@ -121,88 +116,56 @@ a:hover {
   margin: 0 0 30px 0;
 }
 
-
 .agenda p {
   font-weight: 300;
 }
 
-.aside img {
-  width:100%;
+
+/* Left column Navigation */
+
+aside {
+  background: #D64262;
 }
 
-.attribution {
-  bottom: 10px;
-  color: #eee;
-  opacity: 0.5;
+aside .image {
   position: relative;
-  top: -30px;
-  transition: all 0.2s ease 0s;
-  float: right;
-  right: 15px;
-  display: none;
+}
+
+aside .image img {
+  width: 100%;
+}
+
+aside .image .attribution {
+  position: absolute;
+  bottom: 11px;
+  right: 6px;
+  padding: 4px 10px 5px 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,.5);
+  background: rgba(0,0,0,.2);
+  text-decoration: none;
+  transition: color .1s ease-out;
+}
+
+aside .image .attribution i {
+  margin-right: 2px;
+}
+
+aside .image .attribution:hover {
+  color: rgba(255,255,255,.75);
 }
 
 
-ul {
-  list-style-position: outside;
-  padding-left: 25px;
-}
-
-.agenda {
+ul.agenda {
   margin: 0;
   padding: 0;
 }
 
-.goals{
-  padding:10px 20px;
-}
-
-.goals ul, .literacy{
-  margin-bottom:10%;;
-}
-
 .agenda > li {
-  display: none;
-}
-
-.goals ul li, .goals p{
-  list-style-position:inside;
-  list-style-type: square;
-  font-weight:300;
-  font-size:.9em;
-}
-
-.agenda > li {
-  list-style-position:inside;
   list-style-type: none;
-
-}
-
-.time {
-  background: rgba(63, 181, 142,.25);
-  border: solid 2px  rgba(63, 181, 142,.5);;
-  right: 40px;
-  border: none;
-  padding-top: 12px;
-  font-size: 18px;
-  top: 30px;
-  padding: 10px 14px;
-  height: auto;
-  border-radius: 0;
-  color: rgba(63, 181, 142,1);
-
-  border: solid 2px  rgba(63, 181, 142,.5);;
-  border-width: 0 2px 0 0;
-  position: absolute;
 }
 
 
-hr {
-  color: #FF4E1F;
-  background: #FF4E1F;
-  width: 75%;
-  height: 5px;
-}
 
 .sessions {
   background: #FFF1C5;
@@ -216,10 +179,6 @@ hr {
 .coming-soon {
   background-color:#F5F5F5;
   border: 5px dashed #E3EAEE;
-}
-
-.img-example {
-  width: 100%;
 }
 
 figcaption{
@@ -309,38 +268,36 @@ figcaption{
   width:120px;
 }
 
-.leadTime {
-  background-color:#3fb58e;
-  color:white;
-  padding:5px;
-  text-align:center;
-
-/*  position: absolute;*/
-  top: 0px;
-  right: 40px;
-  padding: 8px 12px;
-  margin: 0;
-  display: inline-block;
-  border: solid 2px #3fb58e;
-
-  background-color: white;
-  border-width: 0 2px 2px 2px;
-  margin: 18px 0 0 0 ;
-  border-width: 0 0 0 2px;
-
-  padding: 8px 12px 10px 12px;
+.time {
   color:#3fb58e;
-      background: rgba(63, 181, 142,.25);
-
-
-/*  border-radius: 0 0 15px 15px;*/
+  background: #caf6e6;
+  border: solid 2px #3fb58e;
 }
 
-.leadTime:before {
+.total-time {
+  padding: 8px 12px;
+  margin: 18px 0 0 0;
+  display: inline-block;
+  border-width: 0 0 0 2px;
+  padding: 8px 12px 10px 12px;
+}
+
+.total-time:before {
   content:   "\f017";
   font-family: FontAwesome;
   margin-right: 3px;
 }
+
+.step-time {
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  font-size: 18px;
+  padding: 10px 16px 10px 14px;
+  border-width: 0 2px 0 0;
+}
+
+/* This is just for the stupid web literacies... */
 
 .btn {
   font-size: 16px;
@@ -355,26 +312,16 @@ figcaption{
   opacity: .8;
 }
 
-.small{
-  font-style: italic;
-  color: #FFF;
-  padding-bottom: 10%;
-}
-
-.exampleIcon{
-  float:left;
-  margin-right:2%;
-  width: 125px;
-  clear: both;
-}
 
 figure {
   padding: 0;
   margin: 20px 0 50px 0;
+
 }
 
 figure img {
   display: block;
+  max-width: 100%;
 }
 
 figcaption {
@@ -382,6 +329,7 @@ figcaption {
   padding: 4px 8px;
   margin-top: 8px;
 }
+
 
 .discussion-link {
   border-top: solid 1px #DDD;
@@ -404,7 +352,7 @@ figcaption {
   position: relative;
 }
 
-.agenda-navigation a {
+.agenda-navigation li a {
   display: block;
   font-size: 16px;
   text-decoration: none;
@@ -413,13 +361,160 @@ figcaption {
 }
 
 .agenda-navigation li.selected a {
-  background: #d12d51;
+  background: #C92751;
   font-weight: bold;
 }
 
 .agenda-navigation a:hover {
-  background: #d12d51;
+  background: #C92751;
 }
+
+
+.agenda-navigation a {
+  padding: 18px 22px;
+}
+
+.agenda-navigation li a {
+  padding-left: 60px;
+  color: rgba(255,255,255,.6);
+}
+
+.agenda-navigation li.selected a {
+  color: rgba(255,255,255,1);
+}
+
+.agenda-navigation li:after {
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  border: solid 2px rgba(255,255,255,.25);
+  color: rgba(255,255,255,.5);
+  border-radius: 50%;
+  width: 28px;
+  height: 25px;
+  top: calc(50% - 15px);
+  left: 20px;
+  padding-top: 2px;
+}
+
+.agenda-navigation li.selected:after {
+  border: solid 2px rgba(255,255,255,.8);
+  color: rgba(255,255,255,1);
+}
+
+.agenda-navigation li:nth-child(1):after {
+  content:  "\f024";
+  font-family: FontAwesome;
+  border: none;
+  font-size: 18px;
+  top: 18px;
+  left: 22px;
+}
+
+
+
+
+/* For narrow viewports */
+
+@media all and (max-width: 600px) {
+
+  [mode=step] .activity-title {
+    margin: 0 0 5px 0;
+  }
+
+  .agenda > li > h1 {
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+
+  .total-time {
+    padding: 8px 12px;
+    margin: 20px 0 0px 0;
+  }
+
+  .step-time {
+    top: 26px;
+    right: 30px;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  aside {
+    width: 100%;
+    max-width: 100%
+  }
+
+  .wrapper {
+    min-height: auto;
+  }
+
+  .main {
+    padding: 30px 25px 30px 25px;
+    margin-top: 50px;
+  }
+
+  aside {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+  }
+
+  aside img {
+    display: none;
+  }
+
+  .agenda-navigation {
+    margin: 0;
+    display: flex;
+  }
+
+  .agenda-navigation li {
+    flex: 1;
+    position: relative;
+  }
+
+  .agenda-navigation li a {
+    padding: 18px 0;
+  }
+
+  .agenda-navigation li:after {
+    pointer-events: none;
+    position: absolute;
+    border: none !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    padding-top: 17px;
+    border: none;
+  }
+
+  .agenda-navigation li:first-child:after {
+    content:  "\f024";
+    font-family: FontAwesome;
+    top: 3px;
+  }
+
+  .agenda-navigation li:nth-child(1):after {
+    left: 0 !important;
+  }
+
+  .agenda-navigation li a {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+}
+
+
+
+/* This adds the numbers to each agenda step link */
 
 .agenda-navigation li:nth-child(2):after {
   content: "1";
@@ -445,183 +540,14 @@ figcaption {
   content: "6";
 }
 
-
-
-@media all and (min-width: 601px) {
-
-  .agenda-navigation a {
-    padding: 18px 22px;
-  }
-
-  .agenda-navigation li a {
-    padding-left: 60px;
-    color: rgba(255,255,255,.6);
-  }
-
-  .agenda-navigation li.selected a {
-    color: rgba(255,255,255,1);
-  }
-
-  .agenda-navigation li:after {
-    pointer-events: none;
-    position: absolute;
-    text-align: center;
-    color: white;
-    font-size: 16px;
-    border: solid 2px rgba(255,255,255,.25);
-    color: rgba(255,255,255,.5);
-    border-radius: 50%;
-    width: 28px;
-    height: 25px;
-    top: calc(50% - 15px);
-    left: 20px;
-    padding-top: 2px;
-  }
-
-  .agenda-navigation li.selected:after {
-    border: solid 2px rgba(255,255,255,.8);
-    color: rgba(255,255,255,1);
-  }
-
-  .agenda-navigation li:nth-child(1):after {
-    content:  "\f024";
-    font-family: FontAwesome;
-    border: none;
-    font-size: 18px;
-    top: 18px;
-    left: 22px;
-  }
-
+.agenda-navigation li:nth-child(8):after {
+  content: "7";
 }
 
-
-@media all and (max-width: 600px) {
-
-  .leadTime {
-    background-color:#3fb58e;
-    color:white;
-    padding:5px;
-    text-align:center;
-
-    position: absolute;
-    top: 0px;
-    right: 40px;
-    padding: 8px 12px;
-    margin: 0;
-
-    background-color: white;
-    border-width: 2px 2px 2px 2px;
-    border-width: 0px;
-    padding: 8px 12px 10px 12px;
-    color:#3fb58e;
-/*    border-left: solid 2px #3fb58e;*/
-    border: solid 2px  rgba(63, 181, 142,.5);;
-    border-width: 0 0 0 2px;
-    background: rgba(63, 181, 142,.25);
-/*    border-radius: 20px;*/
-  /*  border-radius: 0 0 15px 15px;*/
-  display: inline-block;
-  position: static;
-  padding:5px;
-  text-align:center;
-
-  top: 0px;
-  padding: 8px 12px;
-  margin: 20px 0 0px 0;
-  text-align: left;
+.agenda-navigation li:nth-child(9):after {
+  content: "8";
 }
 
-  .time {
-    background: rgba(63, 181, 142,.25);
-    border: solid 2px  rgba(63, 181, 142,.5);;
-
-
-    right: 30px;
-    border: none;
-    padding-top: 12px;
-    font-size: 18px;
-    top: 30px;
-    padding: 10px 12px;
-    height: auto;
-    border-radius: 0;
-
-    border: solid 2px  rgba(63, 181, 142,.5);;
-    border-width: 0 2px 0 0;
-  }
-
-  .aside {
-    width: 100%;
-    max-width: 100%
-  }
-
-  .wrapper {
-    display: block;
-    min-height: auto;
-  }
-
-
-
-  .main {
-    padding: 30px 30px 30px 30px;
-    margin-top: 50px;
-  }
-
-  .aside {
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-  }
-
-  .aside img {
-    display: none;
-  }
-
-  .agenda-navigation {
-    margin: 0;
-    display: flex;
-  }
-
-  .agenda-navigation li {
-    flex: 1;
-    position: relative;
-  }
-
-  .agenda-navigation li a {
-    padding: 18px 0;
-  }
-
-  .agenda-navigation li.selected a {
-    background: #c32344;
-  }
-
-  .agenda-navigation li:hover a {
-    background: #c32344;
-  }
-
-
-  .agenda-navigation li:after {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 18px;
-    padding-top: 17px;
-    border: none;
-  }
-
-  .agenda-navigation li:first-child:after {
-    content:  "\f024";
-    font-family: FontAwesome;
-    top: 3px;
-  }
-
-  .agenda-navigation a {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+.agenda-navigation li:nth-child(10):after {
+  content: "9";
 }
