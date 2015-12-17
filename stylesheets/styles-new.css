@@ -5,7 +5,6 @@ body {
   margin: 0;
 }
 
-
 body * {
   line-height: initial;
 }
@@ -23,7 +22,7 @@ p, li, span {
 
 article {
   max-width: 750px;
-  margin: 0 auto;
+/*  margin: 0 auto;*/
 }
 
 h1 {
@@ -32,7 +31,6 @@ h1 {
   padding: 0;
   font-weight: normal;
   color: black;
-  left: -3px;
   position: relative;
 }
 
@@ -112,8 +110,8 @@ a:hover {
 
 .agenda h1 {
   border-bottom: solid 2px #DDD;
-  padding-bottom: 15px;
-  margin: 0 0 30px 0;
+  padding-bottom: 10px;
+  margin: 0 0 18px 0;
 }
 
 .agenda p {
@@ -289,12 +287,13 @@ figcaption{
 }
 
 .step-time {
-  position: absolute;
-  right: 40px;
-  top: 30px;
   font-size: 18px;
   padding: 10px 16px 10px 14px;
-  border-width: 0 2px 0 0;
+  border-width: 0 0 0 2px;
+  display: block;
+  font-size: 16px;
+  margin: 0 0 15px 0;
+  display: inline-block;
 }
 
 /* This is just for the stupid web literacies... */
@@ -314,8 +313,8 @@ figcaption{
 
 
 figure {
-  padding: 0;
-  margin: 20px 0 50px 0;
+  padding: 0 0 50px 0;
+  margin: 20px 0 0 0;
 
 }
 
@@ -413,9 +412,6 @@ figcaption {
   left: 22px;
 }
 
-
-
-
 /* For narrow viewports */
 
 @media all and (max-width: 600px) {
@@ -426,7 +422,8 @@ figcaption {
 
   .agenda > li > h1 {
     font-size: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    margin: 0 0 25px 0;
   }
 
   .total-time {
@@ -439,6 +436,7 @@ figcaption {
     right: 30px;
     font-size: 16px;
     padding: 5px 10px;
+    position: absolute;
   }
 
   aside {
@@ -469,15 +467,39 @@ figcaption {
   .agenda-navigation {
     margin: 0;
     display: flex;
+    overflow-x: auto;
+    position: relative;
+/*    height: 80px;*/
+    line-height: 80px;
   }
+
+  /*  This is the little arrow when there are scrolling steps*/
+  .agenda-navigation:after {
+    display: none;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    color: white;
+    height: 58px;
+    content:  "\f105";
+    font-family: FontAwesome;
+    padding: 18px 15px 18px 25px;
+    font-size: 22px;
+    color: rgba(255,255,255,.4);
+    box-sizing: border-box;
+    background-image: linear-gradient(90deg, rgba(201,39,81,0), #C92751 80%);
+  }
+
 
   .agenda-navigation li {
     flex: 1;
     position: relative;
+    min-width: 40px;
   }
 
   .agenda-navigation li a {
     padding: 18px 0;
+
   }
 
   .agenda-navigation li:after {
@@ -551,3 +573,108 @@ figcaption {
 .agenda-navigation li:nth-child(10):after {
   content: "9";
 }
+
+.agenda-navigation li:nth-child(11):after {
+  content: "10";
+}
+
+.agenda-navigation li:nth-child(12):after {
+  content: "11";
+}
+
+.agenda-navigation li:nth-child(13):after {
+  content: "12";
+}
+
+.agenda-navigation li:nth-child(14):after {
+  content: "13";
+}
+
+.agenda-navigation li:nth-child(15):after {
+  content: "14";
+}
+
+.agenda-navigation li:nth-child(16):after {
+  content: "15";
+}
+
+.agenda-navigation li:nth-child(17):after {
+  content: "16";
+}
+
+@media print {
+
+  h1.activity-title {
+    font-size: 30px;
+  }
+
+  .agenda h1 {
+    font-size: 30px;
+  }
+
+  body {
+    font-size: 15px !important;
+  }
+
+  article {
+    padding: 0 10px !important;
+  }
+
+  p.summary {
+    padding: 0;
+    background: transparent;
+    font-size: 15px;
+  }
+
+  .time {
+    border: solid 2px #DDD;
+    color: #999 !important;
+    border-width: 2px 2px 2px 2px;
+    background: transparent;
+
+  }
+
+  figure {
+    max-width: 65%;
+  }
+
+  .btn {
+    border: solid 2px #BBB !important;
+    color: #999 !important;
+    border-width: 2px 2px 2px 2px !important;
+    background: transparent !important;
+    padding: 8px;
+    font-size: 15px;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  .discussion-link {
+    display: none !important;
+  }
+
+  .agenda {
+    margin-top: 30px !important;
+  }
+
+  .main ul li {
+    line-height: 100%;
+  }
+
+  .agenda > li {
+    margin-top: 55px !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  .agenda > li .step-time {
+    right: 2px !important;
+    top: 0 !important;
+    padding: 8px;
+    font-size: 15px;
+  }
+
+}
+
