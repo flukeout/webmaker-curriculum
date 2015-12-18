@@ -1,9 +1,15 @@
-var navOffset, navTop, navEl, windowHeight, navHeight;
+// Curriculum Template Code
+//
+// What it does
+// * Handles navigation between the activity steps
+// * Shows the correct step based on the URL (when sending someone a link to a specific step, for example)
+// * Keeps the left-hand navigation fixed to the top of the page when in desktop mode
+
+var navTop, navEl, windowHeight, navHeight;
 
 $(document).ready(function(){
-
   navEl = $(".agenda-navigation");
-  navOffset = navEl.offset();
+  var navOffset = navEl.offset();
   navTop = navOffset.top;
 
   navigate(window.location.hash);
@@ -19,22 +25,17 @@ $(document).ready(function(){
       scroll();
     }
   });
-
 });
 
 function navigate(hash){
-  // First we'll hide the steps and overview
-  // Then we'll show the correct ones
-
+  // First, we'll hide all of the conten
   $(".agenda > li").hide();
   $("section.overview").hide();
 
+  // Next, we'll try to figure out what step to show based on the hash.
   hash = hash.toLowerCase();
   var numberOfSteps = $(".agenda > li").length;
-
-  //By default, we'll show the overview
   var overview = true;
-
   if(hash.indexOf("step") > 0) {
     var step = hash.replace("#step-","");
     if(step <= numberOfSteps){
@@ -42,6 +43,8 @@ function navigate(hash){
     }
   }
 
+  // If there's a step number in the has, we'll show that step.
+  // Otherwise, we'll default to the overview.
   if(overview) {
     hash = "#overview";
     $("section.overview").show();
@@ -51,6 +54,7 @@ function navigate(hash){
     $(".wrapper").attr("mode","step");
   }
 
+  // Here we add the selected class to the activity navigation link.
   navEl.find(".selected").removeClass("selected");
   navEl.find("a[href="+hash+"]").parent().addClass("selected");
 

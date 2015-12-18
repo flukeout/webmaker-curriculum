@@ -22,7 +22,6 @@ p, li, span {
 
 article {
   max-width: 750px;
-/*  margin: 0 auto;*/
 }
 
 h1 {
@@ -311,11 +310,9 @@ figcaption{
   opacity: .8;
 }
 
-
 figure {
   padding: 0 0 50px 0;
   margin: 20px 0 0 0;
-
 }
 
 figure img {
@@ -328,7 +325,6 @@ figcaption {
   padding: 4px 8px;
   margin-top: 8px;
 }
-
 
 .discussion-link {
   border-top: solid 1px #DDD;
@@ -367,7 +363,6 @@ figcaption {
 .agenda-navigation a:hover {
   background: #C92751;
 }
-
 
 .agenda-navigation a {
   padding: 18px 22px;
